@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supabase Auto Ping</title>
+</head>
+<body>
+  <h1>Supabase Auto Ping</h1>
+  <p>Halaman ini hanya untuk uji coba manual ping.</p>
+  <script>
+    const urls = [
+      "https://qolzbrxytwnptrxoszfx.supabase.co",
+      "https://urmacvlmdbtewqjbssrc.supabase.co"
+    ];
+
+    async function pingAll() {
+      for (const url of urls) {
+        try {
+          const res = await fetch(url);
+          console.log(`Ping ${url} status:`, res.status);
+        } catch (err) {
+          console.error(`Gagal ping ${url}:`, err);
+        }
+      }
+    }
+
+    pingAll();
+  </script>
+</body>
+</html>
